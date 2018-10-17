@@ -1,0 +1,45 @@
+{
+  "props": {
+    "Login#default": {
+			"saga": "Login::loginFlow",
+			"form": {
+			  "jsonSchema": {
+			    "type": "object",
+			    "required": [
+			      "username",
+			      "password"
+			    ],
+			    "properties": {
+			      "username": {
+			        "type": "string"
+			      },
+			      "password": {
+							"type": "string"
+			      }
+			    }
+			  },
+			  "uiSchema": [
+					{
+						"widget": "fieldset",
+			      "items": [
+							{
+								"key": "username",
+								"title": "Username",
+								"widget": "text",
+					      "autofocus": true
+					    },
+							{
+								"key": "password",
+								"title": "Password",
+								"widget": "text",
+					      "type": "password"
+					    }
+						]
+			    }
+				],
+			  "properties": {
+			  }
+			}
+    }
+  }
+}

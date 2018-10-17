@@ -1,0 +1,10 @@
+.ComponentForm {
+	label {
+		text-transform: capitalize;
+	}
+
+	// workaround: needs react-forms 0.207.0
+	label[for="version"], label[for="id"], label[for="created"], label[for="updated"] {
+		display: none;
+	}
+}

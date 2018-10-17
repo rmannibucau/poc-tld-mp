@@ -1,0 +1,59 @@
+.Component {
+	> div {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.meta {
+		padding-bottom: 1rem;
+		display: flex;
+
+		.updated {
+			display: inline-block;
+			vertical-align: middle;
+
+			> span {
+				padding-left: 0.4rem;
+			}
+		}
+	}
+
+	.ComponentLinks {
+		ul {
+			list-style: none;
+			margin-left: 0;
+			padding-left: 15px;
+		}
+
+		.btn {
+			text-transform: none;
+		}
+	}
+
+	.Downloads {
+		.DownloadsHeader {
+			padding-top: 1rem;
+			text-transform: uppercase;
+			font-size: 14px;
+			font-weight: 700;
+			line-height: 22px;
+
+			> div {
+				line-height: 3.5rem;
+    		min-height: 3.5rem;
+			}
+		}
+
+		.Download {
+			padding: 5px 0 5px 5px;
+			margin-top: -1px;
+	    border-top: 1px solid #cccbcb;
+	    border-bottom: 1px solid #cccbcb;
+
+			> div {
+				line-height: 3.5rem;
+    		min-height: 3.5rem;
+			}
+		}
+	}
+}

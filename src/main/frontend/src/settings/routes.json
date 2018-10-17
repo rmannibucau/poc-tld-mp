@@ -1,0 +1,67 @@
+{
+	"routes": {
+    "path": "/",
+		"indexRoute": {
+			"component": "Redirect"
+		},
+		"component": "App",
+    "childRoutes": [
+			{
+				"path": "login",
+				"component": "Login"
+			},
+			{
+				"path": "logout",
+				"component": "Logout"
+			},
+			{
+				"path": "application",
+				"component": "Layout",
+        "childRoutes": [
+					{
+						"path": "api",
+						"component": "ApiDoc"
+					},
+          {
+            "path": "components",
+            "component": "ComponentsList"
+          },
+          {
+            "path": "component/:name/:id",
+            "component": "Component"
+          },
+          {
+            "path": "admin/component",
+            "component": "Permissions",
+						"componentId": "component-admin"
+          },
+          {
+            "path": "admin/component/:name/:id",
+            "component": "Permissions",
+						"componentId": "component-admin"
+          },
+          {
+            "path": "admin/upload",
+            "component": "Permissions",
+						"componentId": "upload-admin"
+          },
+          {
+            "path": "admin/:entity",
+            "component": "Permissions",
+						"componentId": "crud-admin"
+          },
+          {
+            "path": "admin/:entity/all",
+            "component": "Permissions",
+						"componentId": "crud-all-admin"
+          },
+          {
+            "path": "admin/:entity/:name/:id",
+            "component": "Permissions",
+						"componentId": "crud-admin"
+          }
+        ]
+			}
+    ]
+  }
+}

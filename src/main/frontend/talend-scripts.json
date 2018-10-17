@@ -1,0 +1,19 @@
+{
+  "html": {
+    "title": "Talend Component Marketplace"
+  },
+  "sass": {
+    "data": {
+      "$brand-primary": "#17486E",
+      "$brand-primary-t7": "#107BB7",
+      "$brand-secondary-t7": "#82BD41"
+    }
+  },
+	"webpack": {
+    "api-url": "http://localhost:8080",
+		"config": {
+      "development": "./webpack.config.app.js",
+      "production": "./webpack.config.app.js"
+    }
+  }
+}

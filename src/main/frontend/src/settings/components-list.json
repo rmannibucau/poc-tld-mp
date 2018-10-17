@@ -1,0 +1,22 @@
+{
+  "props": {
+		"ComponentsList#default": {
+			"didMountActionCreator": "components:loadPage",
+			"onPreviousActionCreator": "components:loadPage",
+			"onNextActionCreator": "components:loadPage",
+			"collectionId": "components",
+			"pagination": {
+				"number": 1,
+				"pageSize": 9
+			},
+			"options": {
+				"truncateLength": 300
+			}
+		},
+		"SearchBox#default": {
+			"didMountActionCreator": "components:loadSuggestions",
+			"collectionId": "componentsSuggestions",
+			"max": 15
+		}
+  }
+}

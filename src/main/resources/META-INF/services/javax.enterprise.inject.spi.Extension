@@ -1,0 +1,3 @@
+org.talend.sdk.component.marketplace.cdi.EntitiesModel
+org.talend.sdk.component.marketplace.cdi.SecurityAutoConfigurer
+org.talend.sdk.component.marketplace.cdi.SPIConfigurer

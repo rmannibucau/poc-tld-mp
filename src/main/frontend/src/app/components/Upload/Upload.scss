@@ -1,0 +1,6 @@
+.Upload {
+	label[for="version"] /* workaround: needs react-forms 0.207.0 */,
+	label[for="file"] {
+		display: none;
+	}
+}

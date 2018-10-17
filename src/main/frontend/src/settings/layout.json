@@ -1,0 +1,305 @@
+{
+  "contentTypes": {},
+
+  "actions": {
+    "menu:components": {
+      "id": "menu:components",
+      "label": "Components",
+      "icon": "talend-component-kit-positive",
+      "payload": {
+        "type": "MENU_LINK",
+        "cmf": {
+          "routerReplace": "/components"
+        }
+      }
+    },
+		"account:add": {
+			"id": "account:add",
+			"label": "Add an account",
+			"bsStyle": "info",
+			"icon": "talend-plus-circle",
+			"payload": {
+				"type": "@@router/CALL_HISTORY_METHOD",
+				"payload": {
+					"method": "push",
+					"args": ["/application/admin/account"]
+				}
+			}
+		},
+		"product:add": {
+			"id": "product:add",
+			"label": "Add a product",
+			"bsStyle": "info",
+			"icon": "talend-plus-circle",
+			"payload": {
+				"type": "@@router/CALL_HISTORY_METHOD",
+				"payload": {
+					"method": "push",
+					"args": ["/application/admin/product"]
+				}
+			}
+		},
+		"vendor:add": {
+			"id": "vendor:add",
+			"label": "Add a vendor",
+			"bsStyle": "info",
+			"icon": "talend-plus-circle",
+			"payload": {
+				"type": "@@router/CALL_HISTORY_METHOD",
+				"payload": {
+					"method": "push",
+					"args": ["/application/admin/vendor"]
+				}
+			}
+		}
+  },
+
+  "props": {
+    "RedirectContainer#default": {
+      "path": "/application/components"
+    },
+
+    "Layout#default": {
+			"saga": "Login::redirectOn401",
+      "id": "Layout",
+      "mode": "OneColumn",
+      "header": {
+        "component": "HeaderBar"
+      }
+    },
+    "HeaderBar#default": {
+      "id": "HeaderBar",
+      "logo": {
+        "icon": "talend-logo-square",
+        "isFull": false,
+				"onClickActionCreator": {
+					"id": "redirect",
+					"data": {
+						"action": {
+							"path": "/"
+						}
+					}
+				}
+      },
+      "brand": {
+        "label": "Talend Components Marketplace (PoC)",
+				"onClickActionCreator": {
+					"id": "redirect",
+					"data": {
+						"action": {
+							"path": "/"
+						}
+					}
+				}
+      },
+			"information": {
+				"id": "menu-dropdown",
+    		"bsStyle": "link",
+    		"icon": "talend-burger",
+				"hideLabel": true,
+				"label": "Action",
+				"pullRight": true,
+				"tooltipPlacement": "bottom",
+				"displayMode": "dropdown",
+				"items": [
+					{
+						"label": "Home",
+						"icon": "talend-home",
+						"onClickActionCreator": {
+							"id": "redirect",
+							"data": {
+								"action": {
+									"path": "/"
+								}
+							}
+						}
+					},
+					{
+						"renderIfExpression": {
+							"id": "app:isLogged",
+							"args": []
+						},
+						"label": "Add a component",
+						"icon": "talend-datagrid",
+						"onClickActionCreator": {
+							"id": "redirect",
+							"data": {
+								"action": {
+									"path": "/application/admin/component"
+								}
+							}
+						}
+					},
+					{
+						"renderIfExpression": {
+							"id": "app:isLogged",
+							"args": []
+						},
+						"label": "Add an archive",
+						"icon": "talend-upload",
+						"onClickActionCreator": {
+							"id": "redirect",
+							"data": {
+								"action": {
+									"path": "/application/admin/upload"
+								}
+							}
+						}
+					},
+					{
+						"divider": true
+					},
+					{
+						"renderIfExpression": {
+							"id": "app:isNotLogged",
+							"args": []
+						},
+						"label": "Login",
+						"icon": "talend-shield",
+						"onClickActionCreator": {
+							"id": "redirect",
+							"data": {
+								"action": {
+									"path": "/login"
+								}
+							}
+						}
+					},
+					{
+						"renderIfExpression": {
+							"id": "app:isLogged",
+							"args": []
+						},
+						"label": "Logout",
+						"icon": "talend-shield",
+						"onClickActionCreator": {
+							"id": "redirect",
+							"data": {
+								"action": {
+									"path": "/logout"
+								}
+							}
+						}
+					},
+					{
+						"divider": true,
+            "renderIfExpression": {
+              "id": "app:isAdmin",
+              "args": []
+            }
+					},
+					{
+						"renderIfExpression": {
+							"id": "app:isAdmin",
+							"args": []
+						},
+						"label": "Create a Product",
+						"icon": "talend-share-alt",
+						"onClickActionCreator": {
+							"id": "redirect",
+							"data": {
+								"action": {
+									"path": "/application/admin/product"
+								}
+							}
+						}
+					},
+					{
+						"renderIfExpression": {
+							"id": "app:isAdmin",
+							"args": []
+						},
+						"label": "Products",
+						"icon": "talend-datagrid",
+						"onClickActionCreator": {
+							"id": "redirect",
+							"data": {
+								"action": {
+									"path": "/application/admin/product/all"
+								}
+							}
+						}
+					},
+					{
+						"divider": true,
+            "renderIfExpression": {
+              "id": "app:isAdmin",
+              "args": []
+            }
+					},
+					{
+						"renderIfExpression": {
+							"id": "app:isAdmin",
+							"args": []
+						},
+						"label": "Create a Vendor",
+						"icon": "talend-group-circle",
+						"onClickActionCreator": {
+							"id": "redirect",
+							"data": {
+								"action": {
+									"path": "/application/admin/vendor"
+								}
+							}
+						}
+					},
+					{
+						"renderIfExpression": {
+							"id": "app:isAdmin",
+							"args": []
+						},
+						"label": "Vendors",
+						"icon": "talend-datagrid",
+						"onClickActionCreator": {
+							"id": "redirect",
+							"data": {
+								"action": {
+									"path": "/application/admin/vendor/all"
+								}
+							}
+						}
+					},
+					{
+						"divider": true,
+            "renderIfExpression": {
+              "id": "app:isAdmin",
+              "args": []
+            }
+					},
+					{
+						"renderIfExpression": {
+							"id": "app:isAdmin",
+							"args": []
+						},
+						"label": "Create an Account",
+						"icon": "talend-user-circle",
+						"onClickActionCreator": {
+							"id": "redirect",
+							"data": {
+								"action": {
+									"path": "/application/admin/account"
+								}
+							}
+						}
+					},
+					{
+						"renderIfExpression": {
+							"id": "app:isAdmin",
+							"args": []
+						},
+						"label": "Accounts",
+						"icon": "talend-datagrid",
+						"onClickActionCreator": {
+							"id": "redirect",
+							"data": {
+								"action": {
+									"path": "/application/admin/account/all"
+								}
+							}
+						}
+					}
+				]
+  		}
+    }
+  }
+}

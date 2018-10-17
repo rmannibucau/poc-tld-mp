@@ -1,0 +1,23 @@
+{
+  "props": {
+    "Component#default": {
+			"saga": "Component::start",
+			"collectionId": "component"
+    },
+
+		"Permissions#component-admin": {
+			"saga": "ComponentForm::start",
+			"collectionId": "componentFormPermission",
+			"child": {
+				"_ref": "ComponentForm#default"
+			}
+		}
+  },
+
+	"ref": {
+		"ComponentForm#default": {
+			"collectionId": "componentForm",
+			"component": "ComponentForm"
+		}
+  }
+}

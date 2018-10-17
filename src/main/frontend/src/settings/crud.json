@@ -1,0 +1,29 @@
+{
+  "props": {
+		"Permissions#crud-admin": {
+			"saga": "CrudForm::start",
+			"collectionId": "crudFormPermission",
+			"child": {
+				"_ref": "CrudForm#default"
+			}
+		},
+		"Permissions#crud-all-admin": {
+			"saga": "CrudList::start",
+			"collectionId": "crudListPermission",
+			"child": {
+				"_ref": "CrudList#default"
+			}
+		}
+  },
+
+	"ref": {
+		"CrudForm#default": {
+			"collectionId": "crudForm",
+			"component": "CrudForm"
+		},
+		"CrudList#default": {
+			"collectionId": "crudList",
+			"component": "CrudList"
+		}
+  }
+}

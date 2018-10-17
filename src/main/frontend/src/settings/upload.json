@@ -1,0 +1,18 @@
+{
+  "props": {
+		"Permissions#upload-admin": {
+			"collectionId": "uploadFormPermission",
+			"saga": "Upload::start",
+			"child": {
+				"_ref": "Upload#default"
+			}
+		}
+  },
+
+	"ref": {
+		"Upload#default": {
+			"collectionId": "uploadForm",
+			"component": "Upload"
+		}
+  }
+}

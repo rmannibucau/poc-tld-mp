@@ -1,0 +1,17 @@
+.ComponentsList {
+	> h1:first-child {
+		text-align: center;
+	}
+
+	.typeahead {
+		width: 40%;
+		padding: 2em;
+    margin: auto;
+	}
+
+	.componentsContainer {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: stretch;
+	}
+}
