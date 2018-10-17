@@ -1,0 +1,33 @@
+= PoC
+
+The application is composed of a JAX-RS/CDI backend (src/main/java)
+and a React.JS frontend (src/main/frontend).
+
+== Start the application
+
+. Build the application once
+
+[source,sh]
+----
+mvn package
+----
+
+[start=2]
+. Launch it
+
+[source,sh]
+----
+mvn meecrowave:run -Pdev
+----
+
+== Winegrower setup
+
+The Maven profile `dev` setups Winegrower to enrich the application
+with new features for free:
+
+- ssh console (started on port 8181 with UNIx login module, if you are using windows you should customize jaas.config)
+
+[source,sh]
+----
+ssh $USER@localhost -p 8181
+----
