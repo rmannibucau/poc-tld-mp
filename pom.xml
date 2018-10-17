@@ -34,6 +34,9 @@
     <junit5.version>5.3.0-M1</junit5.version>
     <h2.version>1.4.197</h2.version>
     <lucene.version>7.4.0</lucene.version>
+
+    <winegrower.version>1.0-SNAPSHOT</winegrower.version>
+    <karaf.version>4.2.2-SNAPSHOT</karaf.version>
   </properties>
 
   <dependencies>
@@ -311,6 +314,16 @@
                   openjpa.jdbc.SynchronizeMappings = buildSchema
                 </talend.marketplace.persistence.unit.properties>
                 <geronimo.jwt-auth.org.eclipse.microprofile.authentication.JWT.clockSkew>100000</geronimo.jwt-auth.org.eclipse.microprofile.authentication.JWT.clockSkew>
+
+                <!-- winegrower -->
+                <karaf.home>${project.build.directory}</karaf.home>
+                <karaf.etc>${project.build.directory}</karaf.etc>
+                <karaf.data>${project.build.directory}</karaf.data>
+                <karaf.startRemoteShell>true</karaf.startRemoteShell>
+                <java.security.auth.login.config>${project.basedir}/src/dev/jaas.config</java.security.auth.login.config>
+                <winegrower.service.org.apache.karaf.shell.sftpEnabled>false</winegrower.service.org.apache.karaf.shell.sftpEnabled>
+                <winegrower.service.org.apache.karaf.shell.sshRealm>unix</winegrower.service.org.apache.karaf.shell.sshRealm>
+                <winegrower.service.org.apache.karaf.shell.sshRoleTypes>com.sun.security.auth.UnixNumericGroupPrincipal</winegrower.service.org.apache.karaf.shell.sshRoleTypes>
               </systemProperties>
             </configuration>
             <dependencies>
@@ -318,6 +331,27 @@
                 <groupId>com.h2database</groupId>
                 <artifactId>h2</artifactId>
                 <version>${h2.version}</version>
+              </dependency>
+              <dependency>
+                <groupId>org.apache.winegrower</groupId>
+                <artifactId>winegrower-servlet</artifactId>
+                <version>${winegrower.version}</version>
+              </dependency>
+              <dependency>
+                <groupId>org.apache.karaf.shell</groupId>
+                <artifactId>org.apache.karaf.shell.ssh</artifactId>
+                <version>${karaf.version}</version>
+              </dependency>
+              <dependency>
+                <groupId>org.apache.karaf.shell</groupId>
+                <artifactId>org.apache.karaf.shell.commands</artifactId>
+                <version>${karaf.version}</version>
+                <exclusions>
+                  <exclusion>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>org.apache.felix.gogo.runtime</artifactId>
+                  </exclusion>
+                </exclusions>
               </dependency>
             </dependencies>
           </plugin>
