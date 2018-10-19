@@ -24,7 +24,7 @@
     "i18next": "9.0.0",
     "immutable": "3.8.1",
     "invariant": "2.2.2",
-    "lodash": "4.17.4",
+    "lodash": "4.17.5",
     "prop-types": "15.5.10",
     "react": "16.4.2",
     "react-ace": "5.2.0",
