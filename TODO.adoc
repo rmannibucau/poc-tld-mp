@@ -1,0 +1,7 @@
+= TODO list
+
+- Find a way to *portably* deploy endpoints
+- Import + setup OpenTracing
+- Implement front endpoints for the error reporting
+- Import healthcheck pby
+- Import metrics? pby
